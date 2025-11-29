@@ -397,7 +397,13 @@ Pounds and Dollars dey always cry for my community, no doubt am.</p>
 document.addEventListener('DOMContentLoaded', function() {
     // Get all "Join Master Class" buttons
     const joinButtons = document.querySelectorAll('.cta-button');
+    const joinBtn= document.querySelectorAll('.jbtn');
     
+    joinBtn.forEach(button => {
+       button.addEventListener('click',()=>{
+         window.location.href='https://chat.whatsapp.com/LcvDSvEc8VSFa2ncfDViHJ?mode=wwt';
+       });
+    });
     // Add click event to each button
     joinButtons.forEach(button => {
        button.addEventListener('click',()=>{
