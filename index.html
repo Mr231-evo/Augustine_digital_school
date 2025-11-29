@@ -1,1 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning Mastery - Learn to Earn</title>
+    <style>
+      /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400"><rect width="1200" height="400" fill="%233498db"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Teacher section */
+.teacher-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.teacher-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.teacher-profile {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.teacher-image {
+    flex: 0 0 200px;
+}
+
+.teacher-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
+    background-color: #e0e0e0;
+}
+
+.teacher-info {
+    flex: 1;
+}
+
+.teacher-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.teacher-info p {
+    margin-bottom: 1rem;
+}
+
+/* Image gallery */
+.image-gallery {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.image-gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Video section */
+.video-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.video-item video {
+    width: 100%;
+    height: 250px;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+.video-item p {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* CTA section */
+.cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.cta-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.cta-button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .teacher-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Earning Mastery</h1>
+            <p>Unlock Your Financial Potential</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Transform Your Financial Future</h2>
+            <p>Learn proven strategies to increase your income and achieve financial independence</p>
+            <button class="cta-button">Join Master Class</button>
+        </div>
+    </section>
+
+    <section class="teacher-section">
+        <div class="container">
+            <h2>Meet Your Instructor</h2>
+            <div class="teacher-profile">
+                <div class="teacher-image">
+                    <img src="mypic.jpg" alt="Your Photo" id="teacher-photo">
+                </div>
+                <div class="teacher-info">
+                    <h3>COACH EMEH AUGUSTINE CHIDOZIE</h3>
+                    <p>Financial Expert & Educator</p>
+                    <p>My name is Augustine chidozie
+I'm an online entrepreneur with exceptional skills on the Internet space .
+I have been in the online space for the past 1year and generated over $5,000 just by answering survey questions
+Having successfully trained and mentored over ,1500 students in over 8 countries in Africa.
+I'm someone who is passionate about teaching people legitimate ways to make money online and live a better life.
+If you're right here, just know that you're not making a mistake because you're about to get access to a life changing opportunity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-gallery">
+        <div class="container">
+            <h2>Educational Resources</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img1.jpg" alt="Educational Image 1">
+                    <p>Over 170k was made in a week just by answering simple survey questions</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img2.jpg" alt="Educational Image 2">
+                    <p>*Just £184 turned into over ₦370k. 😱🔥*
+
+*That’s the power of earning in Pounds — £1 is already worth ₦2k+.*
+
+*</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img3.jpg" alt="Educational Image 3">
+                    <p>you deserve a better life from now hence forth but this can happen we you don't miss my 2 days powerful class</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img4.jpg" alt="Educational Image 4">
+                    <p>*£84 which is over 158,000 made is just 6 days by another students ooo*
+
+*Pounds and Dollars dey always cry for my community, no doubt am.*</p>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Video Lessons</h2>
+            <div class="video-container">
+                <div class="video-item">
+                    <video controls>
+                        <source src="vid5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>*Break down about online survey make sure you understand how it works so you won't get distracted I believe you too can do it*</p>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="vid6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>How survey transform one of our community members who's a stay at home Mom , she was able to generate #5 million  answering simple survey questions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Join our exclusive master class and transform your financial future today</p>
+            <button class="cta-button">Join Master Class Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Earning Mastery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      // Master Class Enrollment
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all "Join Master Class" buttons
+    const joinButtons = document.querySelectorAll('.cta-button');
+    
+    // Add click event to each button
+    joinButtons.forEach(button => {
+       button.addEventListener('click',()=>{
+         window.location.href='https://chat.whatsapp.com/LcvDSvEc8VSFa2ncfDViHJ?mode=wwt';
+       });
+    });
+    
+    // Image placeholder styling (visual indicator of empty images)
+    const emptyImages = document.querySelectorAll('img[src=""]');
+    emptyImages.forEach(img => {
+        img.style.border = '2px dashed #3498db';
+        img.style.padding = '10px';
+    });
+    
+    // Video placeholder styling
+    const emptyVideos = document.querySelectorAll('video');
+    emptyVideos.forEach(video => {
+        if (!video.querySelector('source').getAttribute('src')) {
+            video.style.border = '2px dashed #3498db';
+            video.style.padding = '10px';
+        }
+    });
+    
+    // Teacher photo placeholder
+    const teacherPhoto = document.getElementById('teacher-photo');
+    if (teacherPhoto && !teacherPhoto.getAttribute('src')) {
+        teacherPhoto.style.border = '2px dashed #e74c3c';
+        teacherPhoto.style.padding = '10px';
+    }
+});
+    </script>
+</body>
+  </html>
