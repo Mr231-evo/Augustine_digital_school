@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning Mastery - Learn to Earn</title>
+    <style>
+      /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400"><rect width="1200" height="400" fill="%233498db"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Teacher section */
+.teacher-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.teacher-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.teacher-profile {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.teacher-image {
+    flex: 0 0 200px;
+}
+
+.teacher-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 1%;
+    object-fit: cover;
+    border: 0px solid #3498db;
+    background-color: #e0e0e0;
+        }
+
+.teacher-info {
+    flex: 1;
+}
+
+.teacher-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.teacher-info p {
+    margin-bottom: 1rem;
+}
+
+/* Image gallery */
+.image-gallery {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.image-gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Video section */
+.video-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.video-item video {
+    width: 100%;
+    height: 250px;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+.video-item p {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* CTA section */
+.cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.cta-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.cta-button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .teacher-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+}
+        .jbtn{
+  margin: 0 auto;
+  padding:20px;
+  border-radius: 10px;
+  border:none;
+  display: block;
+  width:80%;
+  background-color: red;
+  color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Earning Mastery</h1>
+            <p>Unlock Your Financial Potential</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Transform Your Financial Future</h2>
+            <p>Learn proven strategies to increase your income and achieve financial independence</p>
+            <button class="cta-button">Join The Master Class</button>
+        </div>
+    </section>
+    
+                <div class="video-item">
+                    <video controls>
+                        <source src="VID-20251128-WA0111.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Break down about online survey make sure you understand how it works so you won't get distracted I believe you too can do it</p>
+                </div>
+               <button class="jbtn">JOIN THE MASTER CLASS</button>
+    <section class="teacher-section">
+        <div class="container">
+            <h2>Meet Your Instructor</h2>
+            <div class="teacher-profile">
+                <div class="teacher-image">
+                    <img src="Screenshot_20251129-135517.png" alt="Your Photo" id="teacher-photo">
+                </div>
+                <div class="teacher-info">
+                    <h3>AUGUSTINE CHIDOZIE</h3>
+                    <p>Financial Expert & Educator</p>
+                    <p>My name is Augustine chidozie
+I'm an online entrepreneur with exceptional skills on the Internet space .
+I have been in the online space for the past 1year and generated over $5,000 just by answering survey questions
+Having successfully trained and mentored over ,1500 students in over 8 countries in Africa.
+I'm someone who is passionate about teaching people legitimate ways to make money online and live a better life.
+If you're right here, just know that you're not making a mistake because you're about to get access to a life changing opportunity.</p>
+                </div>
+                 <button class="jbtn">JOIN THE MASTER CLASS</button>
+    
+            </div>
+        </div>
+    </section>
+
+    <section class="image-gallery">
+        <div class="container">
+            <h2>Educational Resources</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="IMG-20251128-WA0105.jpg" alt="Educational Image 1">
+                    <p>Over 170k was made in a week just by answering simple survey questions</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20251128-WA0106.jpg" alt="Educational Image 2">
+                    <p>Just £184 turned into over ₦370k. 😱🔥
+                        
+
+That’s the power of earning in Pounds — £1 is already worth ₦2k+.
+
+</p>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="VID-20251129-WA0017.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>How survey transform one of our community members who's a stay at home Mom , she was able to generate #5 million  answering simple survey questions</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20251128-WA0107.jpg" alt="Educational Image 3">
+                    <p>you deserve a better life from now hence forth but this can happen when you don't miss my 2 days powerful class</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20251128-WA0099.jpg" alt="Educational Image 4">
+                    <p>£84 which is over 158,000 made is just 6 days by another students ooo
+
+Pounds and Dollars dey always cry for my community, no doubt am.</p>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Join our exclusive master class and transform your financial future today</p>
+            <button class="cta-button">Join Master Class Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Earning Mastery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Appwrite SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0/dist/iife/sdk.min.js"></script>
+
+    <script>
+    
+    const APPRWRITE_CONFIG = {
+        endpoint: 'https://fra.cloud.appwrite.io/v1',
+        projectId: '69a1fbfc003d9ff7c2d6',
+        databaseId: '69a1fc36002e16fa4035',  
+        collectionId: 'admin_table',  
+        documentId: '69a1fdc3002727c383e7',    
+        whatsappFieldName: 'Whatsapp_link'       
+    };
+    const DEFAULT_WHATSAPP_LINK ="";
+    
+    let url = DEFAULT_WHATSAPP_LINK;
+
+    document.addEventListener('DOMContentLoaded', async function() {
+        try {
+            if (APPRWRITE_CONFIG.endpoint === 'YOUR_APPWRITE_ENDPOINT' || 
+                APPRWRITE_CONFIG.projectId === 'YOUR_PROJECT_ID' ||
+                APPRWRITE_CONFIG.databaseId === 'YOUR_DATABASE_ID' ||
+                APPRWRITE_CONFIG.collectionId === 'YOUR_COLLECTION_ID' ||
+                APPRWRITE_CONFIG.documentId === 'YOUR_DOCUMENT_ID') {
+                
+                console.warn('Appwrite configuration is incomplete. Using default WhatsApp link.');
+                console.warn('Please update the APPRWRITE_CONFIG object with your actual values.');
+                
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    const warningDiv = document.createElement('div');
+                    warningDiv.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: #ff9800;
+                        color: white;
+                        padding: 15px 20px;
+                        border-radius: 5px;
+                        z-index: 9999;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                        font-family: Arial, sans-serif;
+                        animation: slideIn 0.3s ease;
+                    `;
+                    warningDiv.innerHTML = '⚠️ Appwrite configuration needed. Using default link.';
+                    document.body.appendChild(warningDiv);
+                    
+                    setTimeout(() => {
+                        if (warningDiv.parentElement) {
+                            warningDiv.remove();
+                        }
+                    }, 5000);
+                }
+                throw new Error('Incomplete configuration');
+            }
+            
+            // Initialize Appwrite SDK
+            const client = new Appwrite.Client();
+            const databases = new Appwrite.Databases(client);
+            
+            client
+                .setEndpoint(APPRWRITE_CONFIG.endpoint)
+                .setProject(APPRWRITE_CONFIG.projectId);
+            
+            
+            const response = await databases.getDocument(
+                APPRWRITE_CONFIG.databaseId,
+                APPRWRITE_CONFIG.collectionId,
+                APPRWRITE_CONFIG.documentId
+            );
+            
+            if (response && response[APPRWRITE_CONFIG.whatsappFieldName]) {
+                url = response[APPRWRITE_CONFIG.whatsappFieldName];
+                console.log('WhatsApp link loaded successfully from database');
+                
+                const successDiv = document.createElement('div');
+                successDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #4CAF50;
+                    color: white;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    z-index: 9999;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    font-family: Arial, sans-serif;
+                    animation: slideIn 0.3s ease;
+                `;
+                successDiv.innerHTML = '✅ WhatsApp link loaded successfully';
+                document.body.appendChild(successDiv);
+                
+                setTimeout(() => {
+                    if (successDiv.parentElement) {
+                        successDiv.remove();
+                    }
+                }, 3000);
+            } else {
+                console.warn('WhatsApp link not found in database. Using default link.');
+            }
+            
+        } catch (error) {
+            console.error('An error occurred while the page was loading, refresh the page:', error);
+            if (!(APPRWRITE_CONFIG.endpoint === 'YOUR_APPWRITE_ENDPOINT')) {
+                const errorDiv = document.createElement('div');
+                errorDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #f44336;
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    z-index: 9999;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    font-family: Arial, sans-serif;
+                    cursor: pointer;
+                    animation: slideIn 0.3s ease;
+                `;
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                errorDiv.innerHTML = '⚠️ An error occurred while loading this page, refresh the page and continue';
+                
+                errorDiv.addEventListener('click', function() {
+                    window.location.reload();
+                });
+                
+                document.body.appendChild(errorDiv);
+                setTimeout(() => {
+                    if (errorDiv.parentElement) {
+                        errorDiv.style.animation = 'slideIn 0.3s ease reverse';
+                        setTimeout(() => {
+                            if (errorDiv.parentElement) {
+                                errorDiv.remove();
+                            }
+                        }, 300);
+                    }
+                }, 8000);
+            }
+        }
+        
+        const joinButtons = document.querySelectorAll('.cta-button');
+        const joinBtn = document.querySelectorAll('.jbtn');
+    
+        const handleClick = (e) => {
+            e.preventDefault();
+            window.open(url, '_blank'); 
+        };
+        
+        
+        joinBtn.forEach(button => {
+            button.addEventListener('click', handleClick);
+        });
+       
+        joinButtons.forEach(button => {
+            button.addEventListener('click', handleClick);
+        });
+   
+        const emptyImages = document.querySelectorAll('img[src=""]');
+        emptyImages.forEach(img => {
+            img.style.border = '2px dashed #3498db';
+            img.style.padding = '10px';
+        });
+        
+        const emptyVideos = document.querySelectorAll('video');
+        emptyVideos.forEach(video => {
+            if (video.querySelector('source') && !video.querySelector('source').getAttribute('src')) {
+                video.style.border = '2px dashed #3498db';
+                video.style.padding = '10px';
+            }
+        });
+        
+        const teacherPhoto = document.getElementById('teacher-photo');
+        if (teacherPhoto && !teacherPhoto.getAttribute('src')) {
+            teacherPhoto.style.border = '2px dashed #e74c3c';
+            teacherPhoto.style.padding = '10px';
+        }
+    });
+    </script>
+</body>
+  </html>
